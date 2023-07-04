@@ -1,26 +1,22 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "descricao": "Bota 1",
-            "preco": "89.90"
-        },
-
-        {
-            "id": 2,
-            "descricao": "Cinto 1",
-            "preco": "59.90"
-        },
-
-        {
-            "id": 3,
-            "descricao": "Carteira 1",
-            "preco": "39.90"
-        }
-
-        
-
-    ]
-       
-    
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Sapato marrom",
+      "preco": "174.90",
+      "imagem": "imagem-sapato.webp"
+    },
+    {
+      "id": 2,
+      "descricao": "Cinto preto",
+      "preco": "65.90",
+      "imagem": "cinto-webp"
+    },
+    {
+      "id": 3,
+      "descricao": "Carteira 1",
+      "preco": "39.90",
+      "imagem": "imagem.webp"
+    }
+  ]
 }
