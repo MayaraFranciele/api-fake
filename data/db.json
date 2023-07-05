@@ -14,9 +14,15 @@
     },
     {
       "id": 3,
-      "descricao": "Carteira 1",
-      "preco": "39.90",
-      "imagem": "imagem.webp"
+      "descricao": "Carteira cinza",
+      "preco": "55.90",
+      "imagem": "carteira.webp"
+    },
+    {
+      "id": 4,
+      "descricao": "Mochila verde",
+      "preco": "229.90",
+      "imagem": "mochila.webp"
     }
   ]
 }
