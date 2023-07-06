@@ -2,27 +2,33 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "Sapato marrom",
+      "descricao": "Sapato Marrom",
       "preco": "174.90",
-      "imagem": "imagem-sapato.webp"
+      "imagem": "sapato-marrom.webp"
     },
     {
       "id": 2,
-      "descricao": "Cinto preto",
+      "descricao": "Cinto Preto",
       "preco": "65.90",
-      "imagem": "cinto-webp"
+      "imagem": "cinto-preto.jpg"
     },
     {
       "id": 3,
-      "descricao": "Carteira cinza",
+      "descricao": "Carteira Cinza",
       "preco": "55.90",
-      "imagem": "carteira.webp"
+      "imagem": "carteira-cinza.jpg"
     },
     {
       "id": 4,
-      "descricao": "Mochila verde",
+      "descricao": "Mochila Verde",
       "preco": "229.90",
-      "imagem": "mochila.webp"
+      "imagem": "mochila-verde.jpg"
+    },
+    {
+      "id": 5,
+      "descricao": "Sapato Azul",
+      "preco": "330.90",
+      "imagem": "sapato-azul.webp"
     }
   ]
 }
