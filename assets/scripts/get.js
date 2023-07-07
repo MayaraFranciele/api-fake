@@ -1,4 +1,4 @@
-function getProdutos() {
+function getProdutos(btnDelete = false) {
             
     fetch('http://localhost:3000/produtos', {
         method: 'GET',
@@ -19,6 +19,19 @@ function getProdutos() {
                 ul.classList.add('produtos');
                 const img = document.createElement('img');
                 img.setAttribute('height', '80');
+
+                if (btnDelete){
+                    const liBotao = document.createElement('li');
+
+                    const botao = document.createElement('button');
+                    botao.type = 'button';
+                    botao.innerHTML = '❌';
+                    botao.classList.add('botao-delete');
+                    botao.value = resposta[i].id;
+
+                    ul.appendChild(liBotao).appendChild(botao);
+
+                }
 
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;

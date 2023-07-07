@@ -5,29 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requisição e Resposta via API</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;1,100&display=swap');
+      </style>
 </head>
 <body>
     <nav id="menu">
         <ul>
             <li>
-                <a href="get.html">GET</a>
+                <a href="get.html">READ</a>
             </li>
             <li>
                 <a href="create-com-post.html">CREATE</a>
             </li>
             <li>
-                <a href="atualiza-produtos.html">PUT</a>
+                <a href="atualiza-produtos.html">UPDATE</a>
+            </li>
+            <li>
+                <a href="delete-com-delete.html">DELETE</a>
             </li>
         </ul>
-        
     </nav>
 
-    <h1>Requisição e Resposta via API</h1>
-    <button type="button" id="btn-fetch">Fetch</button>
+    <h1>Read usando o método GET</h1>
+    <div>
+        <button type="button" id="btn-fetch">Fetch</button>
+    </div>
     <div id="resposta"></div>
+    <div id="listaProdutos"></div>
+
+    <script src="./assets/scripts/get.js"></script>
+
 
     <script>
-        const requisicao = new Request('http://localhost:3000/produtos', {
+        const requisicao = new Request('http://localhost:3000/produtos/', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
@@ -36,28 +47,11 @@
         
         document.querySelector('#btn-fetch').addEventListener('click',() => {
 
-            fetch(requisicao)
-        .then(resposta => resposta.json())
-    //    .then(resposta => JSON.stringify(resposta))
-     //   .then(resposta => JSON.parse(resposta))
-        .then(resposta => {
-
-            document.querySelector('#resposta').innerHTML = "";
-
-
-            for(let i = 0; i < resposta.length; i++){
-                const ul = document.createElement("ul");
-                const produto = `
-            <li>ID: ${resposta[i].id}</li>
-            <li>Descrição: ${resposta[i].descricao}</li>
-            <li>Preço: ${resposta[i].preco}</li>`
-
-            document.querySelector('#resposta').appendChild(ul).innerHTML = produto;
-
-            }
+           getProdutos()
 
         });
-        })
+
+        getProdutos()
         
     </script>
     

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Delete</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;1,100&display=swap');
+      </style>
+</head>
+
+<body>
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="get.html">READ</a>
+            </li>
+            <li>
+                <a href="create-com-post.html">CREATE</a>
+            </li>
+            <li>
+                <a href="atualiza-produtos.html">UPDATE</a>
+            </li>
+            <li>
+                <a href="delete-com-delete.html">DELETE</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Delete usando o metódo DELETE</h1>
+
+    <div id="listaProdutos"></div>
+
+    <script src="./assets/scripts/get.js"></script>
+
+    <script>
+
+        document.addEventListener('click', event => {
+            if (event.target.classList.contains('botao-delete'))
+
+                fetch(`http://localhost:3000/produtos/${event.target.value}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                    .then(resposta => {
+                        if (resposta.ok) {
+                            alert('Produto apagado!');
+                            location.reload
+                        }
+                    })
+
+        })
+
+
+        const requisicao = new Request('http://localhost:3000/produtos/', {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+
+       
+
+            fetch(requisicao)
+                .then(resposta => resposta.json())
+                //    .then(resposta => JSON.stringify(resposta))
+                //   .then(resposta => JSON.parse(resposta))
+                .then(resposta => {
+
+                    document.querySelector('#listaProdutos').innerHTML = "";
+
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        const ul = document.createElement("ul");
+                        ul.classList.add('produtos');
+
+                        const img = document.createElement('img');
+                        img.setAttribute('height', '80')
+
+                        ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
+                        ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
+                        ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
+                        ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', resposta[i].imagem);
+
+                       
+
+
+                        document.querySelector('#listaProdutos').appendChild(ul)
+
+                    }
+                    getProdutos(true)
+
+                });
+       
+                getProdutos(true)
+
+    </script>
+
+
+</body>
+
+</html>

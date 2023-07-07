@@ -15,16 +15,18 @@
     <nav id="menu">
         <ul>
             <li>
-                <a href="get.html">GET</a>
+                <a href="get.html">READ</a>
             </li>
             <li>
                 <a href="create-com-post.html">CREATE</a>
             </li>
             <li>
-                <a href="atualiza-produtos.html">PUT</a>
+                <a href="atualiza-produtos.html">UPDATE</a>
+            </li>
+            <li>
+                <a href="delete-com-delete.html">DELETE</a>
             </li>
         </ul>
-        
     </nav>
 
     <h1>Create usando o método POST</h1>
@@ -60,7 +62,7 @@
                     'imagem': document.querySelector('#imagem').value
                 }
 
-                fetch(`http://localhost:3000/produtos`, {
+                fetch(`http://localhost:3000/produtos/`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
