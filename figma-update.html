@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de produtos</title>
+    <link rel="stylesheet"  href="figma.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+    </style>
+</head>
+
+<body>
+   
+
+    <h1>Update com PUT</h1>
+
+
+    <div id="resposta"></div>
+    <div class="form">
+        <h2 class="title-form">Alteração de Produtos</h2>
+        <form action="" method="post">
+            <label for="id">ID</label> 
+            <input type="text" id="id" placeholder="digite o ID do produto"><br>
+
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" placeholder="digite a descrição do produto"><br>
+
+            <label for="preco">Preço</label> 
+            <input type="text" id="preco" placeholder="digite o preço do produto"><br>
+
+            <!-- <label for="imagem">Imagem:</label>
+            <input type="text" id="imagem"><br> -->
+
+            <button type="button" id="btnAtualizar">Atualizar</button>
+            <button type="reset" id="btnCancelar" disabled>Cancelar</button>
+        </form>
+    </div>
+        
+    <h3>Lista de Produtos</h3>
+    <div id="listaProdutos"></div>
+    <script src="./assets/scripts/get.js"></script>
+    
+    <script>
+        document.addEventListener('click', event =>{
+            if (event.target.classList.contains('produtos')){
+
+                const elementoBase = event.target;
+
+                document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(1)').innerHTML;
+                document.querySelector('#descricao').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
+                document.querySelector('#preco').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
+                // document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(4) img').getAttribute('src').split("imagem/").pop();
+
+
+            }
+            checaInputs()
+            
+        } )
+        
+    function checaInputs(){
+        const idPreenchido = document.querySelector('input#id').value !== '';
+        const descricaoPreenchido = document.querySelector('input#descricao').value !== '';
+        const precoPreenchido = document.querySelector('input#preco').value !== '';
+        // const imagemPreenchido = document.querySelector('input#imagem').value !== '';
+
+
+        if (idPreenchido || descricaoPreenchido || precoPreenchido){ //|| imagemPreenchido){
+            document.querySelector('#reset').removeAttribute('disabled');
+            if (idPreenchido){
+            
+                document.querySelector('#btnAtualizar').removeAttribute('disabled');
+                
+
+            }
+        }else{
+            document.querySelector('#reset').setAttribute('disabled', '');
+            document.querySelector('#btnAtualizar').setAttribute('disabled', '');
+        }
+    }
+        
+    
+        document.querySelector('#btnAtualizar').addEventListener('click',
+            () => {
+                const id = document.querySelector('#id').value
+                const dados = {
+                    'id': null,
+                    'descricao': document.querySelector('#descricao').value,
+                    'preco': document.querySelector('#preco').value,
+                    // 'imagem': document.querySelector('#imagem').value
+                }
+
+                fetch(`http://localhost:3000/produtos/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(dados)
+                })
+
+                    .then(response => {
+                        if (response.ok) {
+                            document.querySelector('#resposta').innerHTML = 'Produto Atualizado!';
+                        }
+
+                    })
+
+                getProdutos()
+            })
+
+        getProdutos()
+
+    </script>
+
+</body>
+
+</html>

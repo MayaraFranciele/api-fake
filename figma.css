@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #FFF1C1;
+}
+
+h1{
+    color: #000;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 40px 0 40px 0;
+}
+
+.form{
+    width: 420px;
+    height: 439px;
+    background-color: #fff;
+    flex-shrink: 0;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin: auto;
+}
+
+.title-form{
+    color: #000;
+    display: flex;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex-direction: column;
+    flex-shrink: 0;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+label{
+    display: block;
+    color: #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 1rem;
+    width: 190px;
+    height: 34px;
+    flex-shrink: 0;
+}
+
+input{
+    width: 304px;
+    height: 34px;
+    background-color: #FFF1C1;
+    color: #9A9A9A;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+#btnAtualizar{
+    padding: 10px 25px 10px 25px;
+    color: #fff;
+    border-radius: 4px;
+    background: #48A4FA;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#btnAtualizar:hover{
+    border-radius: 4px;
+    background: #007BED;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#btnCancelar{
+    padding: 10px 25px 10px 25px;
+    background-color: #F59999;
+    color:#444444;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#btnCancelar:hover{
+    border-radius: 4px;
+    background: #FF5F5F;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#btnAtualizar:active{
+    border-radius: 4px;
+    background: #007BED;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#btnCancelar:active{
+    border-radius: 4px;
+    background: #FF5F5F;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+h3{
+    margin: 100px 0 20px 100px;
+}
+
+.produtos{
+    display: flex;
+    list-style: none;
+    justify-content:space-around;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 2px solid #444444;
+    margin: 0 100px 0px 100px;
+}
+
+
+ul:nth-child(odd){
+    background-color: #FFF;
+}
+
+ul:nth-last-child(1){
+    margin-bottom: 100px;
+}
+
