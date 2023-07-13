@@ -7,13 +7,12 @@
 
 body{
     font-family: 'Ubuntu', sans-serif;
-    background-color: #FFF1C1;
+    background-color: #FEFFE4;
 }
 
 h1{
     color: #000;
     text-align: center;
-    font-family: Ubuntu;
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
@@ -35,7 +34,6 @@ h1{
 .title-form{
     color: #000;
     display: flex;
-    text-align: center;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -55,17 +53,18 @@ label{
     font-weight: 400;
     line-height: normal;
     padding-top: 1rem;
-    width: 190px;
-    height: 34px;
-    flex-shrink: 0;
+    text-align: start;
+    margin-left: 60px;
 }
 
 input{
     width: 304px;
     height: 34px;
-    background-color: #FFF1C1;
-    color: #9A9A9A;
+    background-color: #FEFFE4;
+    color: #000;
     font-family: 'Ubuntu', sans-serif;
+    padding: 8px;
+    border-radius: 4px;
 }
 
 
@@ -79,6 +78,12 @@ input{
     font-size: 16px;
     margin: 20px;
     cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#btnAtualizar:disabled{
+    background-color: #CAE6FF;
+    color: #FFFFFF;
 }
 
 #btnAtualizar:hover{
@@ -87,7 +92,7 @@ input{
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-#btnCancelar{
+#reset{
     padding: 10px 25px 10px 25px;
     background-color: #F59999;
     color:#444444;
@@ -97,9 +102,15 @@ input{
     font-size: 16px;
     margin: 20px;
     cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-#btnCancelar:hover{
+#reset:disabled{
+    background-color: #FFE2E2;
+    color: #AEAEAE;
+}
+
+#reset:hover{
     border-radius: 4px;
     background: #FF5F5F;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -111,7 +122,7 @@ input{
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-#btnCancelar:active{
+#reset:active{
     border-radius: 4px;
     background: #FF5F5F;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -129,11 +140,17 @@ h3{
     cursor: pointer;
     border-bottom: 2px solid #444444;
     margin: 0 100px 0px 100px;
+    font-family: 'Ubuntu', sans-serif;
+
 }
 
 
 ul:nth-child(odd){
     background-color: #FFF;
+}
+
+ul:nth-child(even){
+    background-color: #FFF1C1;
 }
 
 ul:nth-last-child(1){
