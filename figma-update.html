@@ -45,16 +45,14 @@
     
     <script>
         document.addEventListener('click', event =>{
-            if (event.target.classList.contains('produtos')){
+            if (event.target.closest('ul').classList.contains('produtos')){
 
-                const elementoBase = event.target;
+                const elementoBase = event.target.closest('ul');
 
                 document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(1)').innerHTML;
                 document.querySelector('#descricao').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
                 document.querySelector('#preco').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
                 document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(4) img').getAttribute('src').split("imagem/").pop();
-
-
             }
             checaInputs()
             
