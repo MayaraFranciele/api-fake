@@ -7,7 +7,7 @@
 
 body{
     font-family: 'Ubuntu', sans-serif;
-    background-color: #FEFFE4;
+    background-color: var(--cor-fundo);
 }
 
 h1{
@@ -155,5 +155,53 @@ ul:nth-child(even){
 
 ul:nth-last-child(1){
     margin-bottom: 100px;
+}
+
+       
+.bts.bts-base {
+    width: 60.6px;
+    height: 27.26;
+    border-radius: 30px;
+    margin: 10px;
+    border: 1px solid transparent; 
+}
+
+.bts-base.bts-light {
+    background: #000;
+    transition: .5s;
+}
+
+.bts-base.bts-dark {
+    background: #d9d9d9;
+    transition: all .5s;
+}
+
+.bts-slider {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.bts-slider.bts-light {
+    background: #d9d9d9;
+    transition: all .5s
+}
+
+.bts-slider.bts-dark {
+    background: #000;
+    transform: translateX(35px);
+    transition: all .5s;
+}
+
+:root{
+    --cor-fundo: #FEFFE4;
+
+}
+  
+[data-theme="dark"] {
+    --cor-fundo: #000;
+    --primary-color: #fff;
+    --secundary-color: #fff;
 }
 

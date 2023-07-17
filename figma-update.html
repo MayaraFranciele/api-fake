@@ -12,10 +12,11 @@
 </head>
 
 <body>
-   
+    <div id="btn-slider" class="bts bts-base bts-light">
+        <div class="bts bts-slider bts-light"></div>
+    </div>
 
     <h1>Update com PUT</h1>
-
 
     <div id="resposta"></div>
     <div class="form">
@@ -116,6 +117,36 @@
             })
 
         getProdutos()
+
+        const tema = localStorage.getItem('tema') ? localStorage.getItem('tema') : 'light';
+
+        document.documentElement.setAttribute('data-theme', tema)
+
+        const btsComponentes = document.querySelector('.bts');
+
+        btsComponentes.forEach(btsParte => {
+            btsParte.classList.add(tema)
+        })
+
+        document.querySelector('.bts').addEventListener('click', () => {
+
+        const btsComponentes = document.querySelectorAll('.bts');
+
+        btsComponentes.forEach(btsParte => {
+
+        if (btsParte.classList.contains('light')) {
+        btsParte.classList.replace('light', 'dark');
+        localStorage.setItem('tema', 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+        btsParte.classList.replace('dark', 'light');
+        localStorage.setItem('tema', 'light');
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+   
+    })
+});
 
     </script>
 
