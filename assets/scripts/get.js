@@ -45,3 +45,5 @@ function getProdutos(btnDelete = false) {
 
         });
 }
+
+export { getProdutos };

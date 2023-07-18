@@ -34,26 +34,7 @@
     <div id="resposta"></div>
     <div id="listaProdutos"></div>
 
-    <script src="./assets/scripts/get.js"></script>
+    <script type="module" src="./assets/scripts/requisicao.js"></script>
 
-
-    <script>
-        const requisicao = new Request('http://localhost:3000/produtos/', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        });
-        
-        document.querySelector('#btn-fetch').addEventListener('click',() => {
-
-           getProdutos()
-
-        });
-
-        getProdutos()
-        
-    </script>
-    
 </body>
 </html>
