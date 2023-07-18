@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualização de produtos</title>
-    <link rel="stylesheet"  href="figma.css">
+    <link rel="stylesheet" href="figma.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
     </style>
@@ -22,13 +22,13 @@
     <div class="form">
         <h2 class="title-form">Alteração de Produtos</h2>
         <form action="" method="post">
-            <label for="id">ID</label> 
+            <label for="id">ID</label>
             <input type="text" id="id" placeholder="digite o ID do produto"><br>
 
             <label for="descricao">Descrição</label>
             <input type="text" id="descricao" placeholder="digite a descrição do produto"><br>
 
-            <label for="preco">Preço</label> 
+            <label for="preco">Preço</label>
             <input type="text" id="preco" placeholder="digite o preço do produto"><br>
 
             <label for="imagem">Imagem</label>
@@ -39,19 +39,19 @@
 
         </form>
     </div>
-        
+
     <h3>Lista de Produtos</h3>
     <div id="listaProdutos"></div>
     <script type="module" src="./assets/scripts/update.js"></script>
-    
-    <script>
-       
 
-        const tema = localStorage.getItem('tema') ? localStorage.getItem('tema') : 'light';
+    <script>
+
+
+        const tema = localStorage.getItem('tema') ?? 'light';
 
         document.documentElement.setAttribute('data-theme', tema)
 
-        const btsComponentes = document.querySelector('.bts');
+        const btsComponentes = document.querySelectorAll('.bts');
 
         btsComponentes.forEach(btsParte => {
             btsParte.classList.add(tema)
@@ -59,23 +59,29 @@
 
         document.querySelector('.bts').addEventListener('click', () => {
 
-        const btsComponentes = document.querySelectorAll('.bts');
+            const btsComponentes = document.querySelectorAll('.bts');
 
-        btsComponentes.forEach(btsParte => {
+            btsComponentes.forEach(btsParte => {
+                btsParte.classList.add('tema')
 
-        if (btsParte.classList.contains('light')) {
-        btsParte.classList.replace('light', 'dark');
-        localStorage.setItem('tema', 'dark')
-        document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-        btsParte.classList.replace('dark', 'light');
-        localStorage.setItem('tema', 'light');
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
+            })
 
-   
-    })
-});
+            document.querySelector('.bts').addEventListener('click', () => {
+                btsComponentes.forEach(btsParte => {
+
+                    if (btsParte.classList.contains('light')) {
+                        btsParte.classList.replace('light', 'dark');
+                        localStorage.setItem('tema', 'dark')
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                    } else {
+                        btsParte.classList.replace('dark', 'light');
+                        localStorage.setItem('tema', 'light');
+                        document.documentElement.setAttribute('data-theme', 'light');
+                    }
+                });
+            })
+        })
+
 
     </script>
 

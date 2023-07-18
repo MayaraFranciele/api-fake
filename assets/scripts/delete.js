@@ -49,9 +49,6 @@ const requisicao = new Request('http://localhost:3000/produtos/', {
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
                 ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', resposta[i].imagem);
 
-               
-
-
                 document.querySelector('#listaProdutos').appendChild(ul)
 
             }

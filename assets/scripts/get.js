@@ -20,9 +20,9 @@ function getProdutos(btnDelete = false) {
                 const img = document.createElement('img');
                 img.setAttribute('height', '80');
 
+
                 if (btnDelete){
                     const liBotao = document.createElement('li');
-
                     const botao = document.createElement('button');
                     botao.type = 'button';
                     botao.innerHTML = '❌';
@@ -30,17 +30,18 @@ function getProdutos(btnDelete = false) {
                     botao.value = resposta[i].id;
 
                     ul.appendChild(liBotao).appendChild(botao);
-
                 }
+
+                ul.appendChild(document.createElement('input')).setAttribute('type', 'checkbox', resposta[i].id) 
 
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
                 ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', resposta[i].imagem);
             
-
                 document.querySelector('#listaProdutos').appendChild(ul);
 
+                
             }
 
         });
