@@ -33,6 +33,7 @@ button{
     border-radius: 36px;
     font-size: 16px;
     width: 8rem;
+    margin-left: 1rem;
 }
 
 button:hover{
@@ -54,8 +55,6 @@ label{
 #menu ul li{
     display: inline;
     font-size: 18px;
-
-
 }
 
 #menu ul li a{
@@ -66,9 +65,13 @@ label{
 
 #menu ul li a:hover{
     color: #0c8cee;
-
 }
 
 div{
     text-align: center;
+}
+
+input{
+    border-radius: 6px;
+    height: 15px;
 }

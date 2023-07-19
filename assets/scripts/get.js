@@ -32,8 +32,6 @@ function getProdutos(btnDelete = false) {
                     ul.appendChild(liBotao).appendChild(botao);
                 }
 
-                ul.appendChild(document.createElement('input')).setAttribute('type', 'checkbox', resposta[i].id) 
-
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
