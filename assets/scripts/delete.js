@@ -3,7 +3,7 @@ import { getProdutos } from "./get.js";
 document.addEventListener('click', event => {
     if (event.target.classList.contains('botao-delete'))
 
-        fetch(`http://localhost:3000/produtos/${event.target.value}`, {
+        fetch(`https://json-vercel-weld.vercel.app/produtos/${event.target.value}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'

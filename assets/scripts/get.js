@@ -1,6 +1,6 @@
 function getProdutos(btnDelete = false) {
             
-    fetch('http://localhost:3000/produtos', {
+    fetch('https://json-vercel-weld.vercel.app/produtos', {
         method: 'GET',
         headers: {
             'Content-type': 'application/json'

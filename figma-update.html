@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    <div id="btn-slider" class="bts bts-base bts-light">
-        <div class="bts bts-slider bts-light"></div>
+    <div id="btn-slider" class="bts bts-base">
+        <div class="bts bts-slider"></div>
     </div>
 
     <h1>Update com PUT</h1>
@@ -34,7 +34,7 @@
             <label for="imagem">Imagem</label>
             <input type="text" id="imagem" placeholder="digite a imagem do produto"><br>
 
-            <button type="button" id="btnAtualizar">Atualizar</button>
+            <button type="button" id="btnAtualizar" disabled>Atualizar</button>
             <button type="reset" id="reset" disabled>Cancelar</button>
 
         </form>
@@ -61,12 +61,6 @@
 
             const btsComponentes = document.querySelectorAll('.bts');
 
-            btsComponentes.forEach(btsParte => {
-                btsParte.classList.add('tema')
-
-            })
-
-            document.querySelector('.bts').addEventListener('click', () => {
                 btsComponentes.forEach(btsParte => {
 
                     if (btsParte.classList.contains('light')) {
@@ -80,8 +74,6 @@
                     }
                 });
             })
-        })
-
 
     </script>
 

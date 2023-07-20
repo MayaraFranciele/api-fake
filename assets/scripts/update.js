@@ -48,7 +48,7 @@ document.querySelector('#btnAtualizar').addEventListener('click',
             'imagem': document.querySelector('#imagem').value
         }
 
-        fetch(`http://localhost:3000/produtos/${id}`, {
+        fetch(`https://json-vercel-weld.vercel.app/produtos/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

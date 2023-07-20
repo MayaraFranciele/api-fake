@@ -1,7 +1,7 @@
 import { getProdutos } from "./get.js";
 
 
-const requisicao = new Request('http://localhost:3000/produtos/', {
+const requisicao = new Request('https://json-vercel-weld.vercel.app/produtos/', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
