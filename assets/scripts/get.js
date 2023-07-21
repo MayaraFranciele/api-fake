@@ -35,7 +35,7 @@ function getProdutos(btnDelete = false) {
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
-                ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', resposta[i].imagem);
+                ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src',`./assets/imgs/${resposta[i].imagem}`);
             
                 document.querySelector('#listaProdutos').appendChild(ul);
 
